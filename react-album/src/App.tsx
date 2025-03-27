@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import MainPage from "@pages/index"
+import MainPage from "@/pages/index/index"
 import About from "@pages/about"
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index path='/' element={<MainPage />}/>
-        <Route path='/about' element={<About />}/>
+        <Route path='/about:id' element={<About />}/>
       </Routes>
     </BrowserRouter>
   );
