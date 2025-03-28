@@ -1,0 +1,28 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$HEADER_HEIGHT: 50px;
+$FOOTER_HEIGHT: 50px;
+$NAVIGATION_HEIGHT: 50px;
+
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100vh;
+
+    font: $font-stack;
+    color: $primary-color;
+
+    &__contents{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 100%;
+        height: calc(100% - $FOOTER_HEIGHT - $HEADER_HEIGHT - $NAVIGATION_HEIGHT);
+    }
+}
