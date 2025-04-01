@@ -1,11 +1,12 @@
 import CommonHeader from '@/components/common/header/CommonHeader';
+import CommonSeachBar from '@/components/common/searchBar/CommonSearchBar';
 import styles from './styles/index.module.scss'
 
 function index() {
     return(
         <div className={styles.page}>
             {/** Common Header UI Part*/}
-            <CommonHeader></CommonHeader>
+            <CommonHeader/>
             {/** Common Navigation UI Part */}
             <div className={styles.page__contents}>
                 <div className={styles.page__contents__introBox}>
@@ -16,6 +17,7 @@ function index() {
                             Enjoy!
                         </span>
                         {/** SearchBar UI Part */}
+                        <CommonSeachBar/>
                     </div>
                 </div>
                 <div className={styles.page__contents__imageBox}>
