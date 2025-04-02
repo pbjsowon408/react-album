@@ -14,7 +14,7 @@ function index() {
                         <span className={styles.wrapper__title}>Photo Album</span>
                         <span className={styles.wrapper__desc}>
                             It is an Album that gives splash of photo. <br/>
-                            Enjoy!
+                            by Eddie.
                         </span>
                         {/** SearchBar UI Part */}
                         <CommonSeachBar/>
