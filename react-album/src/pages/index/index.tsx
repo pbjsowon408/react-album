@@ -1,5 +1,6 @@
 import CommonHeader from '@/components/common/header/CommonHeader';
 import CommonSeachBar from '@/components/common/searchBar/CommonSearchBar';
+import CommonNav from '@/components/common/navigation/CommonNav';
 import styles from './styles/index.module.scss'
 
 function index() {
@@ -8,6 +9,7 @@ function index() {
             {/** Common Header UI Part*/}
             <CommonHeader/>
             {/** Common Navigation UI Part */}
+            <CommonNav/>
             <div className={styles.page__contents}>
                 <div className={styles.page__contents__introBox}>
                     <div className={styles.wrapper}>

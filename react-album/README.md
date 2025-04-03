@@ -1,4 +1,4 @@
-## Picture Album Platform based on React Typescript
+## Photo Album Platform based on React Typescript
 
 ### Development environment
 
