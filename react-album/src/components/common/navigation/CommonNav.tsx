@@ -1,5 +1,6 @@
 import { JSX, useEffect, useState } from 'react'
 import styles from './CommonNav.module.scss'
+import { Link } from 'react-router-dom';
 
 interface Navigation{
     index: number,
@@ -14,7 +15,7 @@ function CommonNav() {
         {
             index: 0,
             path: "/edit",
-            label: "For Edit & Upload",
+            label: "Edit & Upload",
             searchValue: "edit",
             isActive: false,
         },
@@ -97,11 +98,6 @@ function CommonNav() {
         }
     ]);
 
-    // TODO: request & response server for menu data 
-    // setNavigation([
-        
-    // ]);
-
     // const feature = (): JSX.Element[] => {
     //     const navLinks = navigation.map((item: Navigation) => {
     //         return (
@@ -112,16 +108,14 @@ function CommonNav() {
     //     });
     //     return navLinks;
     // };
+
     const navLinks = navigation.map((item: Navigation) => {
         return (
-        <div className={styles.navigation__menu} key={item.index}>
+        <Link to={item.path} className={styles.navigation__menu} key={item.index}>
             <span className={styles.navigation__menu__label}>{item.label}</span>
-        </div>
+        </Link>
         );
     });
-    // useEffect(() => {
-
-    // });
 
   return (
     <div className={styles.navigation}>
