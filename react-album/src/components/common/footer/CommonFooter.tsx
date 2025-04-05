@@ -12,7 +12,7 @@ function CommonFooter() {
                 1
             </span>
             <button className={styles.pagenation__button}>
-                <img src='./src/assets/icons/icon-arrowLeft.svg' alt=''/>
+                <img src='./src/assets/icons/icon-arrowRight.svg' alt=''/>
             </button>
         </div>
     </div>

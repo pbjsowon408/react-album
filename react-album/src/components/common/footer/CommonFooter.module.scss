@@ -30,5 +30,33 @@
         height: 24px;
 
         padding: 3px 7px;
+
+        color: main.$color-gray-500;
+
+        font-family: 'Public Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 16px;
+
+        background: transparent;
+        border: none;
+        outline: none;
+
+        cursor: pointer;
+
+        &:hover{
+            background-color: main.$color-gray-100;
+            border-radius: 4px;
+
+            color: main.$color-black-900;
+        }
+
+        &:active{
+            background-color: main.$color-gray-200;
+            border-radius: 4px;
+
+            color: main.$color-black-900;
+        }
+
     }
 }

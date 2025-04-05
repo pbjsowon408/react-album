@@ -1,6 +1,8 @@
 import CommonHeader from '@/components/common/header/CommonHeader';
 import CommonSeachBar from '@/components/common/searchBar/CommonSearchBar';
 import CommonNav from '@/components/common/navigation/CommonNav';
+import CommonFooter from '@/components/common/footer/CommonFooter';
+//CSS
 import styles from './styles/index.module.scss'
 
 function index() {
@@ -26,6 +28,7 @@ function index() {
                 </div>
             </div>
             {/** Common Footer UI Part (Pagenation)*/}
+            <CommonFooter/>
         </div>
     );
 };
