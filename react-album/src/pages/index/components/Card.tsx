@@ -1,8 +1,15 @@
-import React from 'react'
+import styles from './Card.module.scss'
 
 function Card() {
+
+    const openDialogClick = () => {
+        console.log("openDialog");
+    }
+
   return (
-    <div>Card</div>
+    <div className={styles.card} onClick={openDialogClick}>
+        <img src='' alt='' className={styles.card__image}/>
+    </div>
   )
 }
 
