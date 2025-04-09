@@ -5,13 +5,26 @@ import CommonFooter from "@/components/common/footer/CommonFooter";
 import Card from "./components/Card";
 //CSS
 import styles from "./styles/index.module.scss";
+import axios from "axios";
 
 function index() {
-  const getData = () => {
+  const getData = async () => {
     // Call Open API
     const API_URL = "https://api.unsplash.com/search/photos";
     const API_KEY = "AOPkXNtUWcqRqalofJ7D-myVb4E9JIc4hD-WK4wuOuA";
     const PER_PAGE = 30;
+
+    // TODO: 나중에 삭제
+    const searchValue = "Korea";
+    const pageValue = 100;
+
+    try {
+      const response = await axios.get(
+        `${API_URL}?query=${searchValue}&client_id=${API_KEY}&page=${pageValue}&per_page=${PER_PAGE}`
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
