@@ -7,6 +7,7 @@ function Card() {
 
   return (
     <div className={styles.card} onClick={openDialogClick}>
+      {/** TODO: set src */}
       <img src="" alt="" className={styles.card__image} />
     </div>
   );
