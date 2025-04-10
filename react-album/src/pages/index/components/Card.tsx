@@ -1,6 +1,14 @@
 import styles from "./Card.module.scss";
+import { CardDTO } from "../types/Card";
 
-function Card() {
+interface Card {
+  data: CardDTO;
+  key: string;
+}
+
+function Card(props: Card) {
+  const { data, key } = props;
+
   const openDialogClick = () => {
     console.log("openDialog");
   };
@@ -8,7 +16,11 @@ function Card() {
   return (
     <div className={styles.card} onClick={openDialogClick}>
       {/** TODO: set src */}
-      <img src="" alt="" className={styles.card__image} />
+      <img
+        src={data.urls.small}
+        alt={data.alt_description}
+        className={styles.card__image}
+      />
     </div>
   );
 }
