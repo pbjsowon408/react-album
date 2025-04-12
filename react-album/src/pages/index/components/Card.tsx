@@ -15,7 +15,6 @@ function Card(props: Card) {
 
   return (
     <div className={styles.card} onClick={openDialogClick}>
-      {/** TODO: set src */}
       <img
         src={data.urls.small}
         alt={data.alt_description}
