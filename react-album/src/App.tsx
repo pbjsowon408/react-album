@@ -1,14 +1,17 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 import MainPage from "@/pages/index/index";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index path="/" element={<MainPage />} />
-      </Routes>
-    </BrowserRouter>
+    <RecoilRoot>
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<MainPage />} />
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>
   );
 }
 

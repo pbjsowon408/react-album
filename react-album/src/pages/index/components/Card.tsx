@@ -1,5 +1,5 @@
 import styles from "./Card.module.scss";
-import { CardDTO } from "../types/Card";
+import { CardDTO } from "../types/cardType";
 
 interface Card {
   data: CardDTO;
@@ -7,7 +7,7 @@ interface Card {
 }
 
 function Card(props: Card) {
-  const { data, key } = props;
+  const { data } = props;
 
   const openDialogClick = () => {
     console.log("openDialog");
