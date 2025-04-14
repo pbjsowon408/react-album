@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
 import CommonHeader from "@/components/common/header/CommonHeader";
 import CommonSeachBar from "@/components/common/searchBar/CommonSearchBar";
 import CommonNav from "@/components/common/navigation/CommonNav";
@@ -7,17 +8,50 @@ import Card from "./components/Card";
 import { CardDTO } from "./types/cardType";
 //CSS
 import styles from "./styles/index.module.scss";
-import { useRecoilValue } from "recoil";
-import { imageSelector } from "@/store/selector/imageSelector";
+import { imageData } from "@/store/selector/imageSelector";
+//Axios
+// import axios from "axios";
 
 function index() {
-  const storeImg = useRecoilValue(imageSelector); // State Manage using Recoil
+  try {
+    const imgSelector = useRecoilValue(imageData);
+  } catch (e) {
+    console.log("ERROR:" + e);
+  }
 
-  const results = storeImg.results || []; // fallback 적용
+  //   const [imgUrls, setImgUrls] = useState<[]>([]);
+  //   const getData = async () => {
+  //     // Call Open API
+  //     const API_URL = "https://api.unsplash.com/search/photos";
+  //     const API_KEY = "AOPkXNtUWcqRqalofJ7D-myVb4E9JIc4hD-WK4wuOuA";
+  //     const PER_PAGE = 30;
 
-  const CARD_LIST = results.map((card: CardDTO) => {
+  //     // TODO: 나중에 삭제
+  //     const searchValue = "Korea";
+  //     const pageValue = 1;
+
+  //     try {
+  //       const response = await axios.get(
+  //         `${API_URL}?client_id=${API_KEY}&query=${searchValue}&page=${pageValue}&per_page=${PER_PAGE}`
+  //       );
+  //       console.log(response);
+
+  //       if (response.status === 200) {
+  //         setImgUrls(response.data.results);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+
+  const cardList = imgSelector.data.result.map((card: CardDTO) => {
     return <Card data={card} key={card.id} />;
   });
+
+  // initialize
+  //   useEffect(() => {
+  //     getData(); // call getData()
+  //   }, []);
 
   return (
     <div className={styles.page}>
@@ -37,7 +71,7 @@ function index() {
             <CommonSeachBar />
           </div>
         </div>
-        <div className={styles.page__contents__imageBox}>{CARD_LIST}</div>
+        <div className={styles.page__contents__imageBox}>{cardList}</div>
       </div>
       {/** Common Footer UI Part (Pagenation)*/}
       <CommonFooter />

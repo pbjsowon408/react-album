@@ -4,27 +4,25 @@ import { pageState } from "../atom/pageState";
 
 import axios from "axios";
 
-export const imageSelector = selector({
-  key: "imageSelector",
-  get: async ({ get }) => {
-    console.log("123");
-    const API_URL = "https://api.unsplash.com/search/photos";
-    const API_KEY = "AOPkXNtUWcqRqalofJ7D-myVb4E9JIc4hD-WK4wuOuA";
-    const PER_PAGE = 30;
+const API_URL = "https://api.unsplash.com/search/photos";
+const API_KEY = "AOPkXNtUWcqRqalofJ7D-myVb4E9JIc4hD-WK4wuOuA";
+const PER_PAGE = 30;
 
+export const imageData = selector({
+  key: "imageData",
+  get: async ({ get }) => {
     const searchValue = get(searchState);
     const pageValue = get(pageState);
 
-    // call API
+    // API 호출
     try {
-      const response = await axios.get(
-        `${API_URL}?client_id=${API_KEY}&query=${searchValue}&page=${pageValue}&per_page=${PER_PAGE}`
+      const res = await axios.get(
+        `${API_URL}?query=${searchValue}&client_id=${API_KEY}&page=${pageValue}&per_page=${PER_PAGE}`
       );
-      console.log(response.data);
-      return response.data;
+      console.log(res);
+      return res;
     } catch (error) {
       console.log(error);
-      return { results: [] };
     }
   },
 });
