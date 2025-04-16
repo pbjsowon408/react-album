@@ -1,21 +1,15 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import MainPage from "@pages/index"
-import About from "@pages/about"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from "@/pages/index/index";
 
 function App() {
-  return(
+  return (
     <BrowserRouter>
       <Routes>
-        <Route index path='/' element={<MainPage />}/>
-        <Route path='/about' element={<About />}/>
+        <Route index path="/" element={<MainPage />} />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

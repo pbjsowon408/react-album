@@ -29,7 +29,7 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@types/*": ["src/types/*"],
-      "@recoil/*": ["src/recoil/*"],
+      "@store/*": ["src/store/*"],
       "@apis/*": ["src/apis/*"]
     },
 

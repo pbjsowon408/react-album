@@ -5,6 +5,7 @@ import { fileURLToPath, URL } from "url";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // url shorten
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -14,7 +15,7 @@ export default defineConfig({
       ),
       "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
       "@types": fileURLToPath(new URL("./src/types", import.meta.url)),
-      "@recoil": fileURLToPath(new URL("./src/recoil", import.meta.url)),
+      "@store": fileURLToPath(new URL("./src/store", import.meta.url)),
       "@apis": fileURLToPath(new URL("./src/apis", import.meta.url)),
     },
   },
@@ -22,7 +23,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "./src/assets/styles/main.scss',
+        additionalData: '@use "@assets/styles/main.scss";',
       },
     },
   },
